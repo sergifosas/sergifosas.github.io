@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Unshift like</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=YakuHanJP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="menu-container">
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+        <div class="menu-content" id="menuContent">
+            <div class="close-btn" onclick="toggleMenu()">×</div>
+            <ul>
+                <li><a href="#about">Sobre mi</a></li>
+                <li><a href="#experience">Experiència</a></li>
+                <li><a href="#projects">Projectes</a></li>
+                <li><a href="#contact">Contacte</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="background-overlay" id="backgroundOverlay"></div>
+
+    <header class="header">
+        <div class="header-content">
+            <h1>Sergi Fosas Barrio</h1>
+            <p>Desarrollador Web / Enginyer de Software</p>
+        </div>
+    </header>
+    
+    <div class="separator"></div>
+
+    <section id="about" class="section">
+        <h2>Sobre Mi</h2>
+        <p>Apasionat de la tecnologia i la informàtica, amb una gran curiositat per tot el que envolta el món digital. Tot i tenir poc recorregut en l'àmbit professional, em caracteritza una gran motivació per aprendre i una actitud proactiva davant de nous reptes. Tinc facilitat per treballar en equip, aportant idees i aprenent dels altres, i m'agrada afrontar problemes complexos amb un pensament creatiu i una mirada lateral. La meva passió per la resolució de problemes em porta a buscar sempre solucions innovadores i eficients, millorant constantment les meves habilitats tècniques i socials.</p>
+    </section>
+
+    <section id="experience" class="section">
+        <h2>Experiència Professional</h2>
+        <div class="experience-item">
+            <h3>PROFESSOR PARTICULAR</h3>
+            <p>Professor | 2023 - Present</p>
+            <p>Professor particular de Matemàtiques i Física d'alumnes d'ESO i BAT</p>
+        </div>
+        <div class="experience-item">
+            <h3>CERTIFICACIONS DE PRESSUPOSTOS D'OBRA</h3>
+            <p>Creació de Certificacions | 2023 - Present</p>
+            <p>Excel a nivell avançat destinat a pressupostos</p>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Projectes</h2>
+        <div class="projects-container">
+            <a class="project-item">
+                <div class="project-image">
+                    <img src="AutoCert.jpeg" alt="AutoCert">
+                </div>
+                <h3>AutoCert</h3>
+                <p>Gestor de Certificacions d'Obra.</p>
+                <p>Generador automàtic de certificacions amb opció de personalització i extractor d'estadístiques.</p>
+                <div class="tags">
+                    <span class="tag"><i class="fa-brands fa-react"></i></span>
+                    <span class="tag python"><i class="fa-brands fa-python"></i></span>
+                    <span class="tag"><i class="fa-solid fa-file-excel"></i></span>
+                    <span class="tag">Django</span>
+                </div>
+            </a>
+            <a class="project-item">
+                <div class="project-image">
+                    <img src="photographer.jpg" alt="Proyecto 2">
+                </div>
+                <h3>Dossier fotògraf</h3>
+                <p>Pàgina web utilitzada com a portafoli per a fotògraf, amb tota la seva col·lecció de fotografies</p>
+                <div class="tags">
+                    <span class="tag"><i class="fa-brands fa-react"></i></span>
+                    <span class="tag"> <i class="fa-brands fa-js"></i></span>
+                    <span class="tag"><i class="fa-brands fa-html5"></i></span>
+                </div>
+            </a>
+            <a class="project-item">
+                <div class="project-image">
+                    <img src="rubiks_cube.jpg" alt="Proyecto 2">
+                </div>
+                <h3>Solucionador de cubs de rubik</h3>
+                <p>Model 3D d'un cub de Rubik amb solucionador mitjançant l'algoritme de Kociemba.</p>
+                <p style="font-weight: bold;">EN PROCÉS!</p>
+                <div class="tags">
+                    <span class="tag"><i class="fa-brands fa-react"></i></span>
+                    <span class="tag"><i class="fa-brands fa-rust"></i></span>
+                    <span class="tag">Django</span>
+                    <span class="tag">Three.js</span>
+                </div>
+            </a>
+        </div>
+    </section>
+    
+    <footer id="contact" class="footer">
+        <p>Pots contactar-me a <a href="mailto:sergi.fosas@gmail.com">sergi.fosas@gmail.com</a></p>
+        <a href="http://www.freepik.com">Background image designed by 0melapics / Freepik</a>
+    </footer>
+
+    <button id="scrollToAboutBtn" class="scroll-to-about-btn">
+        <span><i class="fa-solid fa-down"></i></span>
+      </button>
+
+    <script>
+          function toggleMenu() {
+            var menuContent = document.getElementById('menuContent');
+            var menuBtn = document.querySelector('.menu-btn');
+            var backgroundOverlay = document.getElementById('backgroundOverlay');
+
+            menuContent.classList.toggle('show');
+            menuBtn.classList.toggle('hide');
+        }
+        
+        const scrollToAboutBtn = document.getElementById('scrollToAboutBtn');
+        const aboutSection = document.getElementById('about');
+
+        
+        scrollToAboutBtn.addEventListener('click', () => {
+            aboutSection.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        
+        window.addEventListener('scroll', () => {
+            const rect = aboutSection.getBoundingClientRect();
+            if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                scrollToAboutBtn.style.display = 'none'; 
+            } 
+        });
+    </script>
+
+</body>
+</html>
+
